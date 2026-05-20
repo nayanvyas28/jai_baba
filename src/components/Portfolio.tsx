@@ -55,7 +55,7 @@ export default function Portfolio() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="relative h-[60vh] md:h-[70vh] w-full max-w-6xl mx-auto overflow-hidden rounded-[2rem] group"
+            className="relative h-[60vh] md:h-[70vh] w-full max-w-6xl mx-auto overflow-hidden rounded-[2rem] group keep-dark"
           >
             <div className="absolute inset-0 z-0">
               <Image

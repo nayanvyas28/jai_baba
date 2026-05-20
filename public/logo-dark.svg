@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 360" width="100%" height="100%">
+  <!-- Left Truss -->
+  <g stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none">
+    <line x1="80" y1="150" x2="202" y2="150" />
+    <line x1="80" y1="175" x2="202" y2="175" />
+    <line x1="80" y1="150" x2="80" y2="175" />
+    <line x1="120" y1="150" x2="120" y2="175" />
+    <line x1="160" y1="150" x2="160" y2="175" />
+    <line x1="80" y1="150" x2="120" y2="175" />
+    <line x1="120" y1="175" x2="160" y2="150" />
+    <line x1="160" y1="150" x2="202" y2="175" />
+  </g>
+
+  <!-- Right Truss -->
+  <g stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none">
+    <line x1="298" y1="150" x2="420" y2="150" />
+    <line x1="298" y1="175" x2="420" y2="175" />
+    <line x1="420" y1="150" x2="420" y2="175" />
+    <line x1="340" y1="150" x2="340" y2="175" />
+    <line x1="380" y1="150" x2="380" y2="175" />
+    <line x1="298" y1="175" x2="340" y2="150" />
+    <line x1="340" y1="150" x2="380" y2="175" />
+    <line x1="380" y1="175" x2="420" y2="150" />
+  </g>
+
+  <!-- Hexagon Center -->
+  <path d="M250 120 L298 148 L298 202 L250 230 L202 202 L202 148 Z" fill="#F5B041" />
+  <text x="250" y="188" font-family="'Anton', 'Oswald', 'Bebas Neue', sans-serif" font-weight="900" font-size="42" text-anchor="middle" fill="#070707">JB</text>
+
+  <!-- Lights Stems -->
+  <g stroke="#FFFFFF" stroke-width="4">
+    <line x1="100" y1="175" x2="100" y2="182" />
+    <line x1="140" y1="175" x2="140" y2="182" />
+    <line x1="360" y1="175" x2="360" y2="182" />
+    <line x1="400" y1="175" x2="400" y2="182" />
+  </g>
+
+  <!-- Lights Bodies -->
+  <!-- Light 1 -->
+  <circle cx="100" cy="194" r="12" fill="#070707" stroke="#FFFFFF" stroke-width="2" />
+  <circle cx="100" cy="194" r="6" fill="#F5B041" />
+  <circle cx="100" cy="194" r="2.5" fill="#FFFFFF" />
+
+  <!-- Light 2 -->
+  <circle cx="140" cy="194" r="12" fill="#070707" stroke="#FFFFFF" stroke-width="2" />
+  <circle cx="140" cy="194" r="6" fill="#F5B041" />
+  <circle cx="140" cy="194" r="2.5" fill="#FFFFFF" />
+
+  <!-- Light 3 -->
+  <circle cx="360" cy="194" r="12" fill="#070707" stroke="#FFFFFF" stroke-width="2" />
+  <circle cx="360" cy="194" r="6" fill="#F5B041" />
+  <circle cx="360" cy="194" r="2.5" fill="#FFFFFF" />
+
+  <!-- Light 4 -->
+  <circle cx="400" cy="194" r="12" fill="#070707" stroke="#FFFFFF" stroke-width="2" />
+  <circle cx="400" cy="194" r="6" fill="#F5B041" />
+  <circle cx="400" cy="194" r="2.5" fill="#FFFFFF" />
+
+  <!-- Halftone Glow Dots -->
+  <g fill="#F5B041">
+    <!-- Light 1 Dots -->
+    <circle cx="92" cy="212" r="1.5" opacity="0.8" />
+    <circle cx="100" cy="212" r="2" opacity="0.9" />
+    <circle cx="108" cy="212" r="1.5" opacity="0.8" />
+    <circle cx="85" cy="218" r="1" opacity="0.5" />
+    <circle cx="95" cy="218" r="1.5" opacity="0.7" />
+    <circle cx="105" cy="218" r="1.5" opacity="0.7" />
+    <circle cx="115" cy="218" r="1" opacity="0.5" />
+
+    <!-- Light 2 Dots -->
+    <circle cx="132" cy="212" r="1.5" opacity="0.8" />
+    <circle cx="140" cy="212" r="2" opacity="0.9" />
+    <circle cx="148" cy="212" r="1.5" opacity="0.8" />
+    <circle cx="125" cy="218" r="1" opacity="0.5" />
+    <circle cx="135" cy="218" r="1.5" opacity="0.7" />
+    <circle cx="145" cy="218" r="1.5" opacity="0.7" />
+    <circle cx="155" cy="218" r="1" opacity="0.5" />
+
+    <!-- Light 3 Dots -->
+    <circle cx="352" cy="212" r="1.5" opacity="0.8" />
+    <circle cx="360" cy="212" r="2" opacity="0.9" />
+    <circle cx="368" cy="212" r="1.5" opacity="0.8" />
+    <circle cx="345" cy="218" r="1" opacity="0.5" />
+    <circle cx="355" cy="218" r="1.5" opacity="0.7" />
+    <circle cx="365" cy="218" r="1.5" opacity="0.7" />
+    <circle cx="375" cy="218" r="1" opacity="0.5" />
+
+    <!-- Light 4 Dots -->
+    <circle cx="392" cy="212" r="1.5" opacity="0.8" />
+    <circle cx="400" cy="212" r="2" opacity="0.9" />
+    <circle cx="408" cy="212" r="1.5" opacity="0.8" />
+    <circle cx="385" cy="218" r="1" opacity="0.5" />
+    <circle cx="395" cy="218" r="1.5" opacity="0.7" />
+    <circle cx="405" cy="218" r="1.5" opacity="0.7" />
+    <circle cx="415" cy="218" r="1" opacity="0.5" />
+  </g>
+
+  <!-- Typography -->
+  <text x="250" y="285" font-family="'Anton', 'Oswald', 'Bebas Neue', 'Arial Black', sans-serif" font-weight="900" font-size="64" text-anchor="middle" letter-spacing="0.05em" fill="#FFFFFF">JAY BABA</text>
+  <text x="250" y="318" font-family="'Poppins', 'Inter', sans-serif" font-weight="800" font-size="15" text-anchor="middle" letter-spacing="0.4em" fill="#F5B041">EVENT PRODUCTION</text>
+</svg>

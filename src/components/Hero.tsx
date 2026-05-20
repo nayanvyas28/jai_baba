@@ -38,7 +38,7 @@ export default function Hero() {
   return (
     <section 
       ref={containerRef}
-      className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-[#070707]"
+      className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-[#070707] keep-dark"
     >
       {/* Parallax Background Text */}
       <motion.div 

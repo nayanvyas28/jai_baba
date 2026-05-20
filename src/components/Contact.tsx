@@ -88,7 +88,7 @@ export default function Contact() {
                 <motion.a 
                   href="https://wa.me/919876543210" 
                   target="_blank"
-                  className="group relative flex items-center justify-between px-8 py-5 bg-black border border-[#25D366]/20 rounded-2xl transition-all duration-500 hover:border-[#25D366] hover:shadow-[0_0_30px_rgba(37,211,102,0.2)] overflow-hidden"
+                  className="group relative flex items-center justify-between px-8 py-5 bg-black border border-[#25D366]/20 rounded-2xl transition-all duration-500 hover:border-[#25D366] hover:shadow-[0_0_30px_rgba(37,211,102,0.2)] overflow-hidden keep-dark"
                 >
                   {/* Subtle Background Glow on Hover */}
                   <div className="absolute inset-0 bg-[#25D366]/5 opacity-0 group-hover:opacity-100 transition-opacity" />

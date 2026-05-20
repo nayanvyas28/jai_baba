@@ -1,17 +1,40 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Music, Video, Zap, Share2 } from "lucide-react";
 
 export default function Footer() {
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
+
+  useEffect(() => {
+    // Check initial theme
+    const isLight = document.documentElement.classList.contains("light");
+    setTheme(isLight ? "light" : "dark");
+
+    const handleThemeChange = () => {
+      const isCurrentlyLight = document.documentElement.classList.contains("light");
+      setTheme(isCurrentlyLight ? "light" : "dark");
+    };
+    window.addEventListener("theme-change", handleThemeChange);
+
+    return () => window.removeEventListener("theme-change", handleThemeChange);
+  }, []);
+
   return (
     <footer className="bg-bg-primary py-20 border-t border-white/5">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="flex items-center gap-3 mb-8">
-              <div className="w-8 h-8 border border-accent-blue/40 rounded flex items-center justify-center">
-                <span className="font-bebas text-lg text-white">J</span>
+            <Link href="/" className="flex items-center gap-3 mb-8 group">
+              <div className="relative w-12 h-12 rounded-lg overflow-hidden border border-white/10 group-hover:border-accent-blue/50 transition-all duration-500">
+                <Image 
+                  src={theme === "light" ? "/logo-light.svg" : "/logo-dark.svg"} 
+                  alt="Jaybaba Logo" 
+                  fill 
+                  className="object-contain" 
+                />
               </div>
               <span className="font-bebas text-2xl tracking-widest text-white">
                 JAYBABA <span className="text-white/20 font-light">PRODUCTIONS</span>
@@ -63,7 +86,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="font-poppins text-white/20 text-[9px] font-bold tracking-widest uppercase">
-            © 2024 JAYBABA PRODUCTIONS. ALL RIGHTS RESERVED.
+            © 2026 JAYBABA PRODUCTIONS. ALL RIGHTS RESERVED.
           </p>
           
           <div className="flex items-center gap-2">

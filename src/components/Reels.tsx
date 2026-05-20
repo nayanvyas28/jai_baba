@@ -6,11 +6,14 @@ import { Play, Heart, Share2, MessageCircle } from "lucide-react";
 import { useRef } from "react";
 
 const reels = [
-  { id: 1, image: "/reel1.png", title: "Midnight Festival", likes: "12.4k" },
-  { id: 2, image: "/reel2.png", title: "Eternal Vows", likes: "8.2k" },
-  { id: 3, image: "/hero.png", title: "Behind The Stage", likes: "15.9k" },
-  { id: 4, image: "/concert.png", title: "Laser Architecture", likes: "22.1k" },
-  { id: 5, image: "/wedding.png", title: "Grand Ballroom", likes: "5.4k" },
+  { id: 1, video: "/reel/reel1.mp4", title: "Midnight Festival", likes: "12.4k" },
+  { id: 2, video: "/reel/reel2.mp4", title: "Eternal Vows", likes: "8.2k" },
+  { id: 3, video: "/reel/reel3.mp4", title: "Behind The Stage", likes: "15.9k" },
+  { id: 4, video: "/reel/reel4.mp4", title: "Laser Architecture", likes: "22.1k" },
+  { id: 5, video: "/reel/reel5.mp4", title: "Grand Ballroom", likes: "5.4k" },
+  { id: 6, video: "/reel/reel6.mp4", title: "Stage Setup", likes: "18.2k" },
+  { id: 7, video: "/reel/reel7.mp4", title: "Lighting Design", likes: "9.5k" },
+  { id: 8, video: "/reel/reel8.mp4", title: "Corporate Event", likes: "11.1k" },
 ];
 
 export default function Reels() {
@@ -61,13 +64,15 @@ export default function Reels() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: i * 0.1 }}
-            className="flex-shrink-0 w-[260px] md:w-[320px] aspect-[9/16] relative rounded-[2rem] overflow-hidden group cursor-pointer snap-center"
+            className="flex-shrink-0 w-[260px] md:w-[320px] aspect-[9/16] relative rounded-[2rem] overflow-hidden group cursor-pointer snap-center keep-dark"
           >
-            <Image
-              src={reel.image}
-              alt={reel.title}
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-700"
+            <video
+              src={reel.video}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
             
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />

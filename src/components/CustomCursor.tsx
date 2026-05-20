@@ -1,15 +1,21 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useSpring } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export default function CustomCursor() {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
   const [isHovering, setIsHovering] = useState(false);
+
+  const springConfig = { damping: 25, stiffness: 200 };
+  const cursorX = useSpring(mouseX, springConfig);
+  const cursorY = useSpring(mouseY, springConfig);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
     };
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -33,11 +39,7 @@ export default function CustomCursor() {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseover", handleMouseOver);
     };
-  }, []);
-
-  const springConfig = { damping: 25, stiffness: 200 };
-  const cursorX = useSpring(mousePos.x, springConfig);
-  const cursorY = useSpring(mousePos.y, springConfig);
+  }, [mouseX, mouseY]);
 
   return (
     <>
@@ -56,8 +58,8 @@ export default function CustomCursor() {
       <motion.div
         className="fixed top-0 left-0 w-1 h-1 bg-accent-blue rounded-full z-[9999] pointer-events-none hidden lg:block"
         style={{
-          x: mousePos.x,
-          y: mousePos.y,
+          x: mouseX,
+          y: mouseY,
           translateX: "-50%",
           translateY: "-50%",
         }}

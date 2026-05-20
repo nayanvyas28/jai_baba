@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const brands = ["SENNHEISER", "JBL", "PIONEER", "CLAY PAKY", "MA LIGHTING", "BOSE"];
+const brands = ["SENNHEISER", "JBL", "RCF", "PIONEER", "CLAY PAKY", "MA LIGHTING", "BOSE"];
 
 export default function Brands() {
   return (

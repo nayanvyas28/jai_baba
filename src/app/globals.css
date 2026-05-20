@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #070707;
-  --color-foreground: #ffffff;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
   
-  --color-accent-blue: #00D1FF;
-  --color-accent-purple: #8B5CF6;
-  --color-accent-gold: #F5B041;
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-purple: var(--accent-purple);
+  --color-accent-gold: var(--accent-gold);
   
-  --color-bg-primary: #070707;
-  --color-bg-secondary: #0B0B0B;
-  --color-bg-tertiary: #121212;
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
 
   --font-bebas: var(--font-bebas);
   --font-anton: var(--font-anton);
@@ -22,6 +22,25 @@
 :root {
   --background: #070707;
   --foreground: #ffffff;
+  --bg-primary: #070707;
+  --bg-secondary: #0B0B0B;
+  --bg-tertiary: #121212;
+  
+  --accent-blue: #00D1FF;
+  --accent-purple: #8B5CF6;
+  --accent-gold: #F5B041;
+}
+
+:root.light {
+  --background: #FAF9F6;
+  --foreground: #121212;
+  --bg-primary: #FAF9F6;
+  --bg-secondary: #F0EFEA;
+  --bg-tertiary: #E6E4DF;
+  
+  --accent-blue: #00A3E0;
+  --accent-purple: #7C3AED;
+  --accent-gold: #D97706;
 }
 
 body {
@@ -154,4 +173,129 @@ html.lenis {
 
 .perspective-1000 {
   perspective: 1000px;
+}
+
+/* Light Mode Overrides for Hardcoded Dark Utilities */
+:root.light .text-white:not(.keep-dark):not(.keep-dark *) {
+  color: #121212 !important;
+}
+
+:root.light .text-white\/5:not(.keep-dark):not(.keep-dark *) {
+  color: rgba(18, 18, 18, 0.05) !important;
+}
+
+:root.light .text-white\/10:not(.keep-dark):not(.keep-dark *) {
+  color: rgba(18, 18, 18, 0.1) !important;
+}
+
+:root.light .text-white\/20:not(.keep-dark):not(.keep-dark *) {
+  color: rgba(18, 18, 18, 0.2) !important;
+}
+
+:root.light .text-white\/30:not(.keep-dark):not(.keep-dark *) {
+  color: rgba(18, 18, 18, 0.3) !important;
+}
+
+:root.light .text-white\/40:not(.keep-dark):not(.keep-dark *) {
+  color: rgba(18, 18, 18, 0.4) !important;
+}
+
+:root.light .text-white\/50:not(.keep-dark):not(.keep-dark *) {
+  color: rgba(18, 18, 18, 0.5) !important;
+}
+
+:root.light .text-white\/60:not(.keep-dark):not(.keep-dark *) {
+  color: rgba(18, 18, 18, 0.6) !important;
+}
+
+:root.light .text-white\/70:not(.keep-dark):not(.keep-dark *) {
+  color: rgba(18, 18, 18, 0.7) !important;
+}
+
+:root.light .text-white\/80:not(.keep-dark):not(.keep-dark *) {
+  color: rgba(18, 18, 18, 0.8) !important;
+}
+
+/* Border Overrides */
+:root.light .border-white\/5:not(.keep-dark):not(.keep-dark *) {
+  border-color: rgba(18, 18, 18, 0.06) !important;
+}
+
+:root.light .border-white\/10:not(.keep-dark):not(.keep-dark *) {
+  border-color: rgba(18, 18, 18, 0.12) !important;
+}
+
+:root.light .border-white\/20:not(.keep-dark):not(.keep-dark *) {
+  border-color: rgba(18, 18, 18, 0.2) !important;
+}
+
+/* Background Overrides */
+:root.light .bg-white\/5:not(.keep-dark):not(.keep-dark *) {
+  background-color: rgba(18, 18, 18, 0.04) !important;
+}
+
+:root.light .bg-white\/10:not(.keep-dark):not(.keep-dark *) {
+  background-color: rgba(18, 18, 18, 0.08) !important;
+}
+
+:root.light .bg-white\/20:not(.keep-dark):not(.keep-dark *) {
+  background-color: rgba(18, 18, 18, 0.15) !important;
+}
+
+/* Interactive elements */
+:root.light .bg-white:not(.keep-dark):not(.keep-dark *) {
+  background-color: #121212 !important;
+}
+
+:root.light .text-black:not(.keep-dark):not(.keep-dark *) {
+  color: #FAF9F6 !important;
+}
+
+:root.light .hover\:bg-white:hover:not(.keep-dark):not(.keep-dark *) {
+  background-color: #121212 !important;
+}
+
+:root.light .hover\:text-black:hover:not(.keep-dark):not(.keep-dark *) {
+  color: #FAF9F6 !important;
+}
+
+:root.light .hover\:border-white:hover:not(.keep-dark):not(.keep-dark *) {
+  border-color: #121212 !important;
+}
+
+:root.light .hover\:bg-white\/20:hover:not(.keep-dark):not(.keep-dark *) {
+  background-color: rgba(18, 18, 18, 0.15) !important;
+}
+
+/* Glassmorphism overrides */
+:root.light .glass-card {
+  background: rgba(18, 18, 18, 0.03) !important;
+  border: 1px solid rgba(18, 18, 18, 0.08) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04) !important;
+}
+
+:root.light .glass-card:hover {
+  background: rgba(18, 18, 18, 0.05) !important;
+  border: 1px solid rgba(0, 163, 224, 0.4) !important;
+  box-shadow: 0 0 30px rgba(0, 163, 224, 0.08) !important;
+}
+
+:root.light .glass-navbar {
+  background: rgba(250, 249, 246, 0.7) !important;
+  border-bottom: 1px solid rgba(18, 18, 18, 0.06) !important;
+}
+
+/* Text glow adjustments */
+:root.light .text-glow {
+  text-shadow: 0 0 20px rgba(18, 18, 18, 0.1) !important;
+}
+
+/* Scrollbar adjustment */
+:root.light ::-webkit-scrollbar-track {
+  background: #FAF9F6 !important;
+}
+
+/* Grain noise adjustment for light mode */
+:root.light body::before {
+  opacity: 0.04 !important;
 }
