@@ -21,7 +21,7 @@ const projects = [
     title: "TECH SUMMIT 2024",
     category: "CORPORATE EVENT",
     image: "/corporate.png",
-    location: "BENGALURU",
+    location: "INDORE",
   },
 ];
 

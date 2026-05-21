@@ -1,13 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Speaker, Zap, Layers, Cpu } from "lucide-react";
 
 const equipment = [
-  { name: "L-ACOUSTICS K2", type: "LINE ARRAY SYSTEMS", icon: Speaker },
-  { name: "GRANDMA3 FULL", type: "LIGHTING CONSOLE", icon: Cpu },
-  { name: "ROE VISUAL RUBY", type: "LED PANELS", icon: Layers },
-  { name: "CLAY PAKY SHARPY", type: "MOVING HEADS", icon: Zap },
+  { name: "L-ACOUSTICS K2", type: "LINE ARRAY SYSTEMS", icon: Speaker, image: "/l_acoustics_k2.png" },
+  { name: "GRANDMA3 FULL", type: "LIGHTING CONSOLE", icon: Cpu, image: "/grandma3.png" },
+  { name: "ROE VISUAL RUBY", type: "LED PANELS", icon: Layers, image: "/roe_ruby.png" },
+  { name: "CLAY PAKY SHARPY", type: "MOVING HEADS", icon: Zap, image: "/clay_paky.png" },
 ];
 
 export default function Equipment() {
@@ -36,13 +37,31 @@ export default function Equipment() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.1 }}
-              className="p-8 md:p-10 glass-card group"
+              className="glass-card group overflow-hidden flex flex-col justify-between"
             >
-              <div className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center mx-auto mb-8 group-hover:bg-accent-gold group-hover:scale-110 transition-all duration-500">
-                <item.icon className="text-white/40 group-hover:text-black transition-colors" size={28} />
+              {/* Image Container */}
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-black/40 border-b border-white/5">
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                />
+                {/* Floating Icon */}
+                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/10 group-hover:border-accent-gold group-hover:bg-accent-gold/10 transition-all duration-500">
+                  <item.icon className="text-white group-hover:text-accent-gold transition-colors" size={18} />
+                </div>
               </div>
-              <h4 className="font-bebas text-2xl text-white mb-2 group-hover:text-accent-gold transition-colors tracking-wide">{item.name}</h4>
-              <p className="font-poppins text-white/20 text-[9px] uppercase tracking-[0.2em] font-bold">{item.type}</p>
+
+              {/* Text Container */}
+              <div className="p-6 text-center">
+                <h4 className="font-bebas text-xl md:text-2xl text-white mb-2 group-hover:text-accent-gold transition-colors tracking-wide">
+                  {item.name}
+                </h4>
+                <p className="font-poppins text-white/20 text-[9px] uppercase tracking-[0.2em] font-bold">
+                  {item.type}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageCircle, Mail, MapPin, ArrowRight } from "lucide-react";
+import { MessageCircle, Mail, MapPin, ArrowRight, Phone } from "lucide-react";
 import Magnetic from "./Magnetic";
 
 export default function Contact() {
@@ -39,9 +39,11 @@ export default function Contact() {
               transition={{ duration: 0.8 }}
               className="glass-card p-12 flex flex-col justify-between border-white/5 group hover:border-accent-blue/30 transition-all duration-700"
             >
-              <div className="space-y-12">
+              <div className="space-y-8">
                 {[
-                  { icon: Mail, label: "ENQUIRIES", value: "HELLO@JAYBABA.PRO", color: "text-accent-blue" },
+                  { icon: Phone, label: "PRIMARY CALL", value: "+91 90093 94145", href: "tel:+919009394145", color: "text-accent-gold" },
+                  { icon: Phone, label: "SUPPORT CALL", value: "+91 96851 41051", href: "tel:+919685141051", color: "text-accent-gold" },
+                  { icon: Mail, label: "ENQUIRIES", value: "HELLO@JAYBABA.PRO", href: "mailto:HELLO@JAYBABA.PRO", color: "text-accent-blue" },
                   { icon: MapPin, label: "HQ LOCATION", value: "MUMBAI, INDIA", color: "text-accent-purple" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-6 group/item">
@@ -52,7 +54,13 @@ export default function Contact() {
                     </Magnetic>
                     <div>
                       <p className="font-poppins text-[9px] text-white/20 uppercase tracking-[0.4em] font-bold mb-2">{item.label}</p>
-                      <p className="font-bebas text-3xl text-white tracking-wide">{item.value}</p>
+                      {item.href ? (
+                        <a href={item.href} className="font-bebas text-3xl text-white tracking-wide hover:text-accent-blue transition-colors block">
+                          {item.value}
+                        </a>
+                      ) : (
+                        <p className="font-bebas text-3xl text-white tracking-wide">{item.value}</p>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -86,7 +94,7 @@ export default function Contact() {
 
               <Magnetic>
                 <motion.a 
-                  href="https://wa.me/919876543210" 
+                  href="https://wa.me/919009394145" 
                   target="_blank"
                   className="group relative flex items-center justify-between px-8 py-5 bg-black border border-[#25D366]/20 rounded-2xl transition-all duration-500 hover:border-[#25D366] hover:shadow-[0_0_30px_rgba(37,211,102,0.2)] overflow-hidden keep-dark"
                 >
